@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class DebtRepay {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.00");
+
+    
+        float principal = sc.nextFloat();
+        float rate = sc.nextFloat();
+        float years = sc.nextFloat();
+
+       
+        float interest = (principal * rate * years) / 100;
+        float totalAmount = principal + interest;
+
+        float discount = (2 * interest) / 100;
+
+        float finalAmount = totalAmount - discount;
+
+       
+        System.out.println(df.format(interest));
+        System.out.println(df.format(totalAmount));
+        System.out.println(df.format(discount));
+        System.out.println(df.format(finalAmount));
+    }
+}
